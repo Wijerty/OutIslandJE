@@ -274,9 +274,21 @@ function onKeyUp(event) {
   }
 }
 
-startButton.addEventListener('click', () => {
+function beginGame() {
   overlay.style.display = 'none';
+  overlay.style.pointerEvents = 'none';
   controls.lock();
+  if (!controls.isLocked) {
+    showMessage('Кликните по сцене, чтобы продолжить.');
+  }
+}
+
+startButton.addEventListener('click', beginGame);
+
+renderer.domElement.addEventListener('click', () => {
+  if (overlay.style.display === 'none' && !controls.isLocked) {
+    controls.lock();
+  }
 });
 
 controls.addEventListener('lock', () => {
