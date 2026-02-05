@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Exo 2', system-ui, sans-serif;
+  background: #070b12;
+  color: #e7f4ff;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+#ui {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 280px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.controls {
+  font-size: 12px;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(15, 40, 70, 0.9), rgba(7, 11, 18, 0.95));
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+
+.panel {
+  text-align: center;
+  background: rgba(15, 22, 35, 0.92);
+  padding: 32px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  max-width: 420px;
+}
+
+.panel h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.panel p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+button {
+  border: none;
+  background: linear-gradient(120deg, #3ee7ff, #5c7bff);
+  color: #051018;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(76, 150, 255, 0.4);
+}
+
+#message {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  background: rgba(6, 16, 28, 0.9);
+  border-radius: 999px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 15;
+}
+
+#message.visible {
+  opacity: 1;
+}
