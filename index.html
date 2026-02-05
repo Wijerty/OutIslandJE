@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Побег с острова — 3D</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="ui">
+      <div class="title">Побег с острова</div>
+      <div class="subtitle">Соберите 3 пропуска и доберитесь до причала.</div>
+      <div class="status">
+        <span id="cards">Пропуска: 0/3</span>
+        <span id="hint">Нажмите, чтобы начать</span>
+      </div>
+      <div class="controls">
+        <div>WASD — движение</div>
+        <div>Мышь — осмотр</div>
+        <div>Shift — ускорение</div>
+        <div>Пробел — прыжок</div>
+      </div>
+    </div>
+    <div id="overlay">
+      <div class="panel">
+        <h1>Побег с острова</h1>
+        <p>Найдите 3 пропуска в главном комплексе и доберитесь до причала, пока погода не испортилась.</p>
+        <button id="start">Начать</button>
+      </div>
+    </div>
+    <div id="message"></div>
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
